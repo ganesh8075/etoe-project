@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: ecomm
-        image: 325511643680.dkr.ecr.ap-south-1.amazonaws.com/etoe/app:v0.5
+        image: 636706114596.dkr.ecr.us-east-1.amazonaws.com/ecomm-repo:v0.1
         ports:
         - containerPort: 8080
 
