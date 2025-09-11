@@ -2,7 +2,7 @@ name: Build, Push to ECR, and Deploy to EKS
 
 on:
   push:
-    branches: [master]
+    branches: [main]
 
 env:
   IMAGE_TAG: v0.1
