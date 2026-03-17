@@ -212,16 +212,24 @@ sudo $TOMCAT_DIR/bin/startup.sh
  5.	Build stage: Select EcommBuild (CodeBuild project)
  6.	Deploy stage: Select EcommApp (CodeDeploy application) and EcommDG
 
+
+
 10. Deploy & Access
     
   •	Push code to repo → triggers pipeline.
+  
   • CodePipeline runs CodeBuild → generates artifact → pushes to S3.
+  
   •	CodeDeploy fetches artifact → deploys to EC2 → starts Tomcat.
+
+  
   
 12.	Access:
     
  o	Tomcat Home → http://<EC2-Public-IP>:8080
+ 
  o	Manager App → http://<EC2-Public-IP>:8080/manager/html
+ 
  o	Ecomm App → http://<EC2-Public-IP>:8080/Ecomm
 
  
