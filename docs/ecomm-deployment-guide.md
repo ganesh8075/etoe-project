@@ -214,6 +214,9 @@ sudo $TOMCAT_DIR/bin/startup.sh
 
 
 
+
+
+
 10. Deploy & Access
     
   •	Push code to repo → triggers pipeline.
@@ -223,8 +226,11 @@ sudo $TOMCAT_DIR/bin/startup.sh
   •	CodeDeploy fetches artifact → deploys to EC2 → starts Tomcat.
 
   
+
+
+
   
-12.	Access:
+11.	Access:
     
  o	Tomcat Home → http://<EC2-Public-IP>:8080
  
