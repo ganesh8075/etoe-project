@@ -95,14 +95,22 @@ Role for CodePipeline:
   sudo systemctl start codedeploy-agent
   
 5. Repository Structure
+   
    Ecomm-Project/
+   
    ├── appspec.yml
+   
    ├── buildspec.yml
+   
    ├── tomcat-users.xml
+   
    ├── scripts/
+   
    │   ├── install_and_deploy_tomcat.sh
+   
    └── src/ (Maven project or Ecomm.war)
-6. CodeBuild Configuration
+   
+7. CodeBuild Configuration
 
 buildspec.yml:
 
