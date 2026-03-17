@@ -212,12 +212,7 @@ sudo $TOMCAT_DIR/bin/startup.sh
  5.	Build stage: Select EcommBuild (CodeBuild project)
  6.	Deploy stage: Select EcommApp (CodeDeploy application) and EcommDG
 
-
-
-
-
-
-10. Deploy & Access
+Note: Deploy & Access
     
   •	Push code to repo → triggers pipeline.
   
@@ -230,7 +225,7 @@ sudo $TOMCAT_DIR/bin/startup.sh
 
 
   
-11.	Access:
+10S.	Access:
     
  o	Tomcat Home → http://<EC2-Public-IP>:8080
  
