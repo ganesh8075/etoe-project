@@ -77,14 +77,21 @@ Role for CodePipeline:
   2.Attach EC2-CodeDeploy-Role IAM role.
 
   3.Install CodeDeploy agent:
+  
   sudo yum update -y
+  
   sudo yum install -y ruby wget
+  
   cd /home/ec2-user
+  
   wget https://aws-codedeploy-ap-south-1.s3.ap-south1.amazonaws.com/latest/install
   
   chmod +x ./install
+  
   sudo ./install auto
+  
   sudo systemctl enable codedeploy-agent
+  
   sudo systemctl start codedeploy-agent
   
 5. Repository Structure
