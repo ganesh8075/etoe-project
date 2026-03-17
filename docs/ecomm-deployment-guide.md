@@ -179,24 +179,32 @@ sudo $TOMCAT_DIR/bin/startup.sh
 9. Creating AWS Services
     
 9.1 Create S3 Bucket
+
  •	Create an S3 bucket for storing build artifacts.
+ 
 9.2 Create CodeBuild Project
+
  1.	Go to CodeBuild > Create project
  2.	Source: GitHub/CodeCommit repo
  3.	Environment: Managed image, Amazon Linux 2, runtime Corretto 11
  4.	Buildspec: buildspec.yml
  5.	Service role: CodeBuildServiceRole
+    
 9.3 Create CodeDeploy Application
+
  1.	Go to CodeDeploy > Applications > Create application
  2.	Compute platform: EC2/On-premises
  3.	Name: EcommApp
 9.4 Create CodeDeploy Deployment Group
+   	
  1.	Inside the application, create a Deployment Group
  2.	Name: EcommDG
  3.	Service role: CodeDeployServiceRole
  4.	Deployment type: In-place
  5.	Environment: Select EC2 instance with EC2-CodeDeploy-Role
+    
 9.5 Create CodePipeline
+
  1.	Go to CodePipeline - Create pipeline
  2.	Pipeline name: EcommPipeline
  3.	Service role: CodePipelineServiceRole
@@ -205,10 +213,13 @@ sudo $TOMCAT_DIR/bin/startup.sh
  6.	Deploy stage: Select EcommApp (CodeDeploy application) and EcommDG
 
 10. Deploy & Access
+    
   •	Push code to repo → triggers pipeline.
   • CodePipeline runs CodeBuild → generates artifact → pushes to S3.
   •	CodeDeploy fetches artifact → deploys to EC2 → starts Tomcat.
-11.	Access:
+  
+12.	Access:
+    
  o	Tomcat Home → http://<EC2-Public-IP>:8080
  o	Manager App → http://<EC2-Public-IP>:8080/manager/html
  o	Ecomm App → http://<EC2-Public-IP>:8080/Ecomm
