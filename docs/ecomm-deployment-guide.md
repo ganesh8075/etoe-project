@@ -94,7 +94,7 @@ Role for CodePipeline:
   
   sudo systemctl start codedeploy-agent
   
-5. Repository Structure
+  5. Repository Structure
    
    Ecomm-Project/
    
