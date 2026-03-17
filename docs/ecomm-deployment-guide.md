@@ -77,7 +77,7 @@ Role for CodePipeline:
   2.Attach EC2-CodeDeploy-Role IAM role.
 
   3.Install CodeDeploy agent:
-  
+  ```
   sudo yum update -y
   
   sudo yum install -y ruby wget
@@ -93,6 +93,7 @@ Role for CodePipeline:
   sudo systemctl enable codedeploy-agent
   
   sudo systemctl start codedeploy-agent
+```
   
   5. Repository Structure
    
@@ -113,7 +114,7 @@ Role for CodePipeline:
 7. CodeBuild Configuration
 
 buildspec.yml:
-
+```
 version: 0.2
 phases:
   install:
@@ -131,11 +132,12 @@ artifacts:
     - appspec.yml
     - scripts/*
     - tomcat-users.xml
+```
 
 7. CodeDeploy Configuration
    
 appspec.yml:
-
+```
 version: 0.0
 os: linux
 files:
@@ -148,9 +150,10 @@ hooks:
     - location: scripts/install_and_deploy_tomcat.sh
       timeout: 300
       runas: ec2-user
-
+```
 
 8. Deployment Script
+```
 scripts/install_and_deploy_tomcat.sh
 #!/bin/bash
 set -e
@@ -171,6 +174,7 @@ sudo cp /home/ec2-user/tomcat-users.xml $TOMCAT_DIR/conf/
 
 sudo $TOMCAT_DIR/bin/shutdown.sh || true
 sudo $TOMCAT_DIR/bin/startup.sh
+```
 
 9. Creating AWS Services
     
